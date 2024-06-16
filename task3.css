@@ -1,0 +1,121 @@
+/* General Body Styling */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-color: #282c34;
+    margin: 0;
+    color: #61dafb;
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #000;
+}
+
+/* Menu Styling */
+.menu {
+    margin-bottom: 20px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #61dafb;
+    color: #282c34;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #21a1f1;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #1b8ac6;
+    transform: scale(1);
+}
+
+/* Board Styling */
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 15px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+#board.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Box Styling */
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    background-color: #61dafb;
+    border: 4px solid #282c34;
+    border-radius: 10px;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #282c34;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.box:hover {
+    background-color: #21a1f1;
+    transform: scale(1.1);
+}
+
+.box:active {
+    background-color: #1b8ac6;
+    transform: scale(1.05);
+}
+
+/* Background Pattern */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/diagmonds-light.png');
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+        gap: 10px;
+    }
+
+    .box {
+        width: 80px;
+        height: 80px;
+        font-size: 1.8em;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}
